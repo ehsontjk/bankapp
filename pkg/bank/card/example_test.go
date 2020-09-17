@@ -18,7 +18,7 @@ func ExamplePaymentSources() {
 			
 			PAN: "0002",
 			Balance: 510,
-			Active: true,
+			Active: false,
 		
 		},
 		{
@@ -34,5 +34,8 @@ for _, v := range paymentSources {
 	fmt.Println(v.Number)
 }
 
-//Output: [{0001}]
+//Output: 0001
+//0011
+          
+
 }

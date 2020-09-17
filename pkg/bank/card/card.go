@@ -3,32 +3,13 @@ import ("bank/pkg/bank/types"
 )
 
 func PaymentSources(cards []types.Card) []types.PaymentSource {
-	cards = []types.Card {
-		{
-			
-			PAN: "0001",
-			Balance: 550,
-			Active: true,
-		},
-		{
-			
-			PAN: "0002",
-			Balance: 510,
-			Active: true,
-		
-		},
-		{
-			
-			PAN: "0011",
-			Balance: 450,
-			Active: true,
-	},
-}
-	var paymentSources []types.PaymentSource // == nil
-    for _, v := range paymentSources {
-         
-            paymentSources = append(paymentSources,v)
-        }
-    
-    return paymentSources
+	payment := []types.PaymentSource{}
+	for _, card:= range cards{
+		if card.Balance>0 && card.Active {
+			payment=append(payment, types.PaymentSource{card.Name, card.PAN, card.Balance})
+			//payment.Balance=card.Balance
+			//payment.Number=card.Number
+		}
+	}
+	return payment
 }
