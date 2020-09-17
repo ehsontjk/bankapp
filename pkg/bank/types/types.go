@@ -7,10 +7,10 @@ const (
 	RUB Currency = "RUB"
 	USD Currency = "USD"
 )
-type PAN string
+
 type Card struct {
 	ID int
-	PAN PAN
+	PAN string
 	Currency Currency
 	Balance Money
 	Color string
